@@ -1,0 +1,33 @@
+\documentclass[journal,twocolumn,12pt]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{diffcoeff}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\Int}{\int\limits}
+
+\title{Assignment 13}
+\author{Gollapudi Sasank CS21BTECH11019}
+
+\begin{document}
+\maketitle
+\section*{Question : }
+The random variable $x$ has the truncated exponential $f(x) = ce^{-c(x-x_0)}U(x-x_0)$. Find the ML estimate $\hat{c}$ of $c$ in terms of $n$ samples $x_i$ of $x$.
+\section*{Solution : }
+Given 
+\begin{align}
+f(x) &= ce^{-c(x-x_0)}U(x-x_0) \\
+\Rightarrow f(X,c) &= c^ne^{-cn(\bar{x}-x_0)} 
+\end{align}
+Where $\bar{x} = \frac{\Sigma x_i}{n}$ \\
+To obtain the ML estimate $\hat{c}$ of $c$ 
+\begin{align}
+\frac{\partial{f(X,c)}}{\partial{c}} &= 0 \\
+\Rightarrow nc^{n-1}e^{-c(x-x_0)}&= c^ne^{-c(x-x_0)}n(\bar{x}-x_0) \\
+\Rightarrow \hat{c} &= \frac{1}{\bar{x} - x_0}
+\end{align}
+\end{document}
